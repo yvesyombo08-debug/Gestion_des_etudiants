@@ -51,6 +51,13 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Afficher");
+                    if (liste.isEmpty()){
+                        System.out.println("Aucun étudiant.");
+                    }else {
+                        for (Etudiant et : liste){
+                            et.afficher();
+                        }
+                    }
                     break;
                 case 3:
                     System.out.println("Rechercher");
