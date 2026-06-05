@@ -61,6 +61,20 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Rechercher");
+                    System.out.println("ID à rechercher :");
+                    int idRecherche = sc.nextInt();
+                    boolean trouve = false;
+                    for (Etudiant et : liste){
+                        if (et.id == idRechercher){
+                            et.afficher();
+                            trouve = true;
+                            break;
+                        }
+                    }
+                    if (!trouve){
+                        System.out.println("Non trouvé!");
+                    }
+                    
                     break;
                 case 4:
                     System.out.println("Supprimer");
