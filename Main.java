@@ -1,9 +1,24 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Main {
+    static class Etudiant {
+    int id;
+    String nom;
+    int age;
+
+    public Etudiant(int id, String nom, int age) {
+        this.id = id;
+        this.nom = nom;
+        this.age = age;
+    }
+    public void afficher() {
+        System.out.println("ID: " + id + ", Nom: " + nom + ", Age: " + age);
+    }
+}
+
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-        ArrayList<Etudiant> etudiants = new ArrayList<>();   
+        ArrayList<Etudiant> liste = new ArrayList<>();   
         int choix;
         do {
             System.out.println("\n===== MENU =====");
@@ -18,6 +33,21 @@ public class Main {
             switch (choix) {
                 case 1:
                     System.out.println("Ajouter");
+                    System.out.println("ID: ");
+                    int id = sc.nextInt();
+                    sc.nextLine();
+
+                    System.out.println("Nom: ");
+                    String nom = sc.nextLine();
+
+                    System.out.println("Age: ");
+                    int age = sc.nextInt();
+
+                    Etudiant e = new Etudiant(id, nom, age);
+                    liste.add(e);
+
+                    System.out.println("Etudiant ajouté !");
+
                     break;
                 case 2:
                     System.out.println("Afficher");
@@ -31,19 +61,5 @@ public class Main {
             }
         }while (choix != 0);
         sc.close();
-    }
-}
-static class Etudiant {
-    int id;
-    String nom;
-    int age;
-
-    public Etudiant(int id, String nom, int age) {
-        this.id = id;
-        this.nom = nom;
-        this.age = age;
-    }
-    public void afficher() {
-        System.out.println("ID: " + id + ", Nom: " + nom + ", Age: " + age);
     }
 }
