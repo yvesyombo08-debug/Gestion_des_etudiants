@@ -74,10 +74,26 @@ public class Main {
                     if (!trouve){
                         System.out.println("Non trouvé!");
                     }
-                    
+
                     break;
                 case 4:
                     System.out.println("Supprimer");
+                    System.out.println("ID à supprimer :");
+                    int idSup = sc.nextInt();
+
+                    boolean supprime = false;
+
+                    for (Etudiant et : liste){
+                        if (et.id == idSup){
+                            liste.remove(et);
+                            supprime = true;
+                            System.out.println("Supprimé !");
+                            break;
+                        }
+                    }
+                    if (!supprime){
+                        System.out.println("Non trouvé!");
+                    }
                     break;
             }
         }while (choix != 0);
