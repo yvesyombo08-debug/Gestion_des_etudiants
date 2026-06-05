@@ -26,7 +26,7 @@ public class Main {
             System.out.println("2. Afficher");
             System.out.println("3. Rechercher");
             System.out.println("4. Supprimer");
-            System.out.println("5. Quitter");
+            System.out.println("5. Modifier");
             System.out.println("Choix: ");
             choix = sc.nextInt();
 
@@ -93,6 +93,33 @@ public class Main {
                     }
                     if (!supprime){
                         System.out.println("Non trouvé!");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Modifier");
+                    System.out.println("ID à modifier :");
+                    int idModif = sc.nextint();
+                    sc.nextLine();
+
+                    boolean modifie = false;
+
+                    for (Etudiant et : liste){
+                        if (et.id == idModif){
+                            System.out.println("Nouveau nom: ");
+                            String nouveauNom = sc.nextLine();
+                            System.out.println("Nouvel age: ");
+                            int nouvelAge = sc.nextInt();
+
+                            et.nom = nouveauNom;
+                            et.age = nouvelAge;
+
+                            System.out.println("Etudiant Modifié !");
+                            modifie = true;
+                            break;
+                        }
+                    }
+                    if (!modifie){
+                        System.out.println("Etudiant non trouvé");
                     }
                     break;
             }
