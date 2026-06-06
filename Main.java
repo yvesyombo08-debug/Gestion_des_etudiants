@@ -65,7 +65,7 @@ public class Main {
                     int idRecherche = sc.nextInt();
                     boolean trouve = false;
                     for (Etudiant et : liste){
-                        if (et.id == idRechercher){
+                        if (et.id == idRecherche){
                             et.afficher();
                             trouve = true;
                             break;
@@ -98,7 +98,7 @@ public class Main {
                 case 5:
                     System.out.println("Modifier");
                     System.out.println("ID à modifier :");
-                    int idModif = sc.nextint();
+                    int idModif = sc.nextInt();
                     sc.nextLine();
 
                     boolean modifie = false;
